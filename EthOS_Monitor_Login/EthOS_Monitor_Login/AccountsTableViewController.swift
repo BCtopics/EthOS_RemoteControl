@@ -45,6 +45,35 @@ class AccountsTableViewController: UITableViewController {
     
     //MARK: - IBActions
     
+    // Add Button
+    
+    @IBAction func AddButtonTapped(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "EthOS Account", message: "Please enter EthOS Information", preferredStyle: .alert)
+        
+        alert.addTextField { (nickname) in
+            nickname.placeholder = "nickName"
+        }
+        
+        alert.addTextField { (username) in
+            username.placeholder = "ethOS Distro Charactes"
+        }
+
+        //FIXME: - Fix Naming
+        let createAction = UIAlertAction(title: "Create", style: .default) { (_) in
+            guard let nickName = alert.textFields?[0].text else { return }
+            guard let ethOSDistroCharacters = alert.textFields?[1].text else { return }
+            
+            AccountController.shared.createAccount(nickName: nickName, ethOSaddress: ethOSDistroCharacters)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(createAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
+
     
 
     /*

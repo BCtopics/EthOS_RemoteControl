@@ -18,7 +18,7 @@ class AccountController {
     
     func createAccount(nickName: String, ethOSaddress: String) {
         
-        let account = Account(nickName: nickName, ethOSaddress: ethOSaddress)
+        let account = Account(nickName: nickName, ethOSaddress: "\(ethOSaddress)")
         self.accounts.append(account)
         NotificationCenter.default.post(name: .refreshTableView, object: nil)
     }

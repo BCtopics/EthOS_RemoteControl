@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zkq-mD-Qo9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -51,7 +51,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Accounts" id="myj-l6-KAc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NGj-Zu-dtm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NGj-Zu-dtm">
+                            <connections>
+                                <action selector="AddButtonTapped:" destination="GQw-kG-9xg" id="Ew7-gG-ttC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrA-yE-XZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
