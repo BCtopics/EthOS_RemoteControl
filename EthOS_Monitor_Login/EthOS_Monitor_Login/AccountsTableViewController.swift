@@ -12,20 +12,39 @@ class AccountsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .refreshTableView, object: nil)
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return AccountController.shared.accounts.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "accountsCell", for: indexPath) as? AccountsTableViewCell else { NSLog("AccountsTableViewCell Was Nil"); return UITableViewCell() }
-
+        
+        let account = AccountController.shared.accounts[indexPath.row]
+        
+        if account.nickName != "" {
+            cell.accountNameLabel.text = account.nickName
+        } else {
+            cell.accountNameLabel.text = account.ethOSaddress
+        }
+        
         return cell
     }
+    
+    //MARK: - Refreshing
+    
+    func reloadTableData() {
+        self.tableView.reloadData()
+    }
+    
+    //MARK: - IBActions
+    
     
 
     /*
