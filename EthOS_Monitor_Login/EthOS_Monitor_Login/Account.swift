@@ -14,13 +14,15 @@ class Account {
     
     let nickName: String
     let ethOSaddress: String
+    let accountURL: URL
     
     //MARK: - Initiailizers
     
-    init(nickName: String, ethOSaddress: String) {
+    init(nickName: String, ethOSaddress: String, URL: URL) {
         
         self.nickName = nickName
         self.ethOSaddress = ethOSaddress
+        self.accountURL = URL
     }
     
 }
