@@ -67,34 +67,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="369" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RigName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fG-Aq-3EC">
-                                                    <rect key="frame" x="6" y="5" width="70" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mbm-ya-XF6">
+                                                    <rect key="frame" x="5" y="5" width="82" height="45"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RigName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fG-Aq-3EC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="82" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPB-NN-nsp">
+                                                            <rect key="frame" x="0.0" y="24.5" width="82" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total hashrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-3n-3me">
+                                                    <rect key="frame" x="255" y="5" width="109" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total hashrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-3n-3me">
-                                                    <rect key="frame" x="253" y="5" width="109" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="IP Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPB-NN-nsp">
-                                                    <rect key="frame" x="7" y="26" width="82" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc1-av-94M">
-                                                    <rect key="frame" x="303" y="27" width="59" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc1-av-94M">
+                                                    <rect key="frame" x="305" y="29.5" width="59" height="30"/>
                                                     <state key="normal" title="Connect"/>
                                                 </button>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="bfz-3n-3me" firstAttribute="top" secondItem="Ca3-XK-es7" secondAttribute="top" constant="5" id="0cV-1Z-XKZ"/>
+                                            <constraint firstItem="mbm-ya-XF6" firstAttribute="leading" secondItem="Ca3-XK-es7" secondAttribute="leading" constant="5" id="2Vv-d6-Zyd"/>
+                                            <constraint firstAttribute="trailing" secondItem="bfz-3n-3me" secondAttribute="trailing" constant="5" id="AHK-hC-BZR"/>
+                                            <constraint firstItem="mbm-ya-XF6" firstAttribute="top" secondItem="Ca3-XK-es7" secondAttribute="top" constant="5" id="JEi-aW-u3I"/>
+                                            <constraint firstItem="wc1-av-94M" firstAttribute="top" secondItem="bfz-3n-3me" secondAttribute="bottom" constant="4" id="JSl-Qt-3tX"/>
+                                            <constraint firstAttribute="trailing" secondItem="wc1-av-94M" secondAttribute="trailing" constant="5" id="VNm-oj-xao"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="connectButton" destination="wc1-av-94M" id="RCo-bj-u3L"/>
                                             <outlet property="ipaddresslabel" destination="kPB-NN-nsp" id="sq7-dv-SCC"/>
