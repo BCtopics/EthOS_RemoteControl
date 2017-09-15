@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="nPw-qo-7fD">
+            <objects>
+                <tableViewController id="GQw-kG-9xg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="2o0-17-7rI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="dz8-dX-w3e" customClass="AccountsTableViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dz8-dX-w3e" id="Ldo-Mx-I9K">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHK-Ov-AFE">
+                                            <rect key="frame" x="9.5" y="6" width="356" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="width" secondItem="Ldo-Mx-I9K" secondAttribute="width" multiplier="0.95" id="3Ef-e9-WxE"/>
+                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="centerX" secondItem="Ldo-Mx-I9K" secondAttribute="centerX" id="4i9-7Y-Ygz"/>
+                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="height" secondItem="Ldo-Mx-I9K" secondAttribute="height" multiplier="0.8" id="63z-mf-Qz0"/>
+                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="centerY" secondItem="Ldo-Mx-I9K" secondAttribute="centerY" id="oMA-B3-ITC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="accountNameLabel" destination="SHK-Ov-AFE" id="f93-CM-xk6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GQw-kG-9xg" id="8nl-cE-I86"/>
+                            <outlet property="delegate" destination="GQw-kG-9xg" id="9ho-HX-ZvL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="myj-l6-KAc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qrA-yE-XZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152.8" y="114.69265367316342"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zu7-y4-bnZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zkq-mD-Qo9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Muo-dz-BCd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GQw-kG-9xg" kind="relationship" relationship="rootViewController" id="R5s-vH-1P0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xX4-cz-Zev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="436" y="115"/>
+        </scene>
+    </scenes>
+</document>

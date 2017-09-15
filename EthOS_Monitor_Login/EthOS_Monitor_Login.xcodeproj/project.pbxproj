@@ -14,6 +14,8 @@
 		6B4BF92D1F6B5334001DDC8C /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */; };
 		6B4BF92E1F6B5334001DDC8C /* NMSSH.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6BA12F351F6C3B65009103D3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F341F6C3B65009103D3 /* Notifications.swift */; };
+		6BA12F381F6C3BC2009103D3 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */; };
+		6BA12F3A1F6C3EFD009103D3 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F391F6C3EFD009103D3 /* AccountsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,8 @@
 		6B4BF91F1F6B526B001DDC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMSSH.framework; sourceTree = "<group>"; };
 		6BA12F341F6C3B65009103D3 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
+		6BA12F391F6C3EFD009103D3 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		6B4BF9291F6B52A8001DDC8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6BA12F391F6C3EFD009103D3 /* AccountsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 		6B4BF92A1F6B52AC001DDC8C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6BA12F361F6C3BB3009103D3 /* AccountTableViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -137,6 +143,14 @@
 				6BA12F341F6C3B65009103D3 /* Notifications.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		6BA12F361F6C3BB3009103D3 /* AccountTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */,
+			);
+			name = AccountTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +216,7 @@
 			files = (
 				6B4BF91E1F6B526B001DDC8C /* LaunchScreen.storyboard in Resources */,
 				6B4BF91B1F6B526B001DDC8C /* Assets.xcassets in Resources */,
+				6BA12F381F6C3BC2009103D3 /* Accounts.storyboard in Resources */,
 				6B4BF9191F6B526B001DDC8C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +230,7 @@
 			files = (
 				6BA12F351F6C3B65009103D3 /* Notifications.swift in Sources */,
 				6B4BF9141F6B526B001DDC8C /* AppDelegate.swift in Sources */,
+				6BA12F3A1F6C3EFD009103D3 /* AccountsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
