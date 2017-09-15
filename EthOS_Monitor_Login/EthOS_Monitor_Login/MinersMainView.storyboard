@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vPQ-ub-4az">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--EthOS Monitor-->
+        <scene sceneID="2pO-zp-r8u">
+            <objects>
+                <viewController id="vPQ-ub-4az" customClass="MinersMainViewController" customModule="EthOS_Monitor_Login" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="awO-eM-2s5"/>
+                        <viewControllerLayoutGuide type="bottom" id="tBV-20-XJF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Nn-nA-7h0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jJn-r6-NbL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="112"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Hashrate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYb-Kn-a4o">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TotalGPUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FD-uY-X4d">
+                                        <rect key="frame" x="0.0" y="30.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uB-nF-ZMt">
+                                        <rect key="frame" x="0.0" y="61" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TotalRigs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJf-A3-nSn">
+                                        <rect key="frame" x="0.0" y="91.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jJn-r6-NbL" firstAttribute="top" secondItem="awO-eM-2s5" secondAttribute="bottom" id="K8M-0l-Gbn"/>
+                            <constraint firstAttribute="trailing" secondItem="jJn-r6-NbL" secondAttribute="trailing" id="n0d-Kz-gGs"/>
+                            <constraint firstItem="jJn-r6-NbL" firstAttribute="leading" secondItem="9Nn-nA-7h0" secondAttribute="leading" id="vEm-kj-ZO2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="EthOS Monitor" id="OGk-fN-Y4L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uv1-33-ybY"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="averageTemp" destination="5uB-nF-ZMt" id="82Z-Qn-oKr"/>
+                        <outlet property="totalGPUSLabel" destination="1FD-uY-X4d" id="C5J-uv-1e2"/>
+                        <outlet property="totalHashRate" destination="DYb-Kn-a4o" id="WrC-my-ruT"/>
+                        <outlet property="totalRigsLabel" destination="CJf-A3-nSn" id="WaJ-jN-ovu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEk-1B-YHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="115"/>
+        </scene>
+    </scenes>
+</document>

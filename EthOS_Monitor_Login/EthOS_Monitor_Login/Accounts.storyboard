@@ -42,6 +42,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="accountNameLabel" destination="SHK-Ov-AFE" id="f93-CM-xk6"/>
+                                    <segue destination="rQd-jz-ce1" kind="show" identifier="toMinersMain" id="SLh-pT-b7G"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,6 +62,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrA-yE-XZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1152.8" y="114.69265367316342"/>
+        </scene>
+        <!--MinersMainView-->
+        <scene sceneID="YE6-cE-IJr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MinersMainView" id="rQd-jz-ce1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Kg-Dl-rIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2102" y="114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zu7-y4-bnZ">
