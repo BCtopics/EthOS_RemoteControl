@@ -20,7 +20,7 @@ class Miner {
     
     init?(dictionary: [String: Any]) {
         
-        guard let totalHashrate = dictionary[Keys.kHash] as? String else { NSLog("Total Hashrate is Nil"); return nil }
+        guard let totalHashrate = dictionary[Keys.kMinerHash] as? String else { NSLog("Total Hashrate is Nil"); return nil }
         guard let rigName = "Name of rig" as? String else { NSLog("rigname is Nil"); return nil }
         guard let ipaddress = dictionary[Keys.kIP] as? String else { NSLog("ip is Nil"); return nil }
         

@@ -61,6 +61,13 @@ class AccountController {
             
             guard let accountInfo = AccountInfo(dictionary: jsonDictionary) else {  NSLog("AccountInfo Error in MinerController"); return }
             
+            guard let minerDictionary = jsonDictionary["rigs"] as? [String : Any] else {
+                NSLog("Miner Dictionary failed")
+                return
+            }
+
+            MinerController.shared.createMiners(dictionary: minerDictionary)
+            
             completion(accountInfo)
         }
         
