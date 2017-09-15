@@ -53,6 +53,11 @@
 			isa = PBXGroup;
 			children = (
 				6B4BF9131F6B526B001DDC8C /* AppDelegate.swift */,
+				6B4BF92B1F6B52B1001DDC8C /* Helpers */,
+				6B4BF92A1F6B52AC001DDC8C /* ViewControllers */,
+				6B4BF9291F6B52A8001DDC8C /* Views */,
+				6B4BF9281F6B52A4001DDC8C /* ModelControllers */,
+				6B4BF9271F6B52A1001DDC8C /* Models */,
 				6B4BF9251F6B5284001DDC8C /* Resources */,
 			);
 			path = EthOS_Monitor_Login;
@@ -75,6 +80,41 @@
 				6B4BF9171F6B526B001DDC8C /* Main.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		6B4BF9271F6B52A1001DDC8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6B4BF9281F6B52A4001DDC8C /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ModelControllers;
+			sourceTree = "<group>";
+		};
+		6B4BF9291F6B52A8001DDC8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		6B4BF92A1F6B52AC001DDC8C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6B4BF92B1F6B52B1001DDC8C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
