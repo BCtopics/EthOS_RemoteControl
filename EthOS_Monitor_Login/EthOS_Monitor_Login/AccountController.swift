@@ -35,6 +35,35 @@ class AccountController {
     
     //MARK: - Fetch / GET Method
     
-    
+    static func fetchMinersFromAccount(account: Account, completion: @escaping (AccountInfo) -> Void) {
+        
+        let urlParamaters = [
+            "json" : "yes"
+        ]
+        
+        // Perform Request
+        
+        NetworkController.performRequest(for: account.accountURL, httpMethod: .get, urlParameters: urlParamaters, body: nil) { (data, error) in
+            
+            // Error Handle
+            if let error = error {
+                NSLog("Error performing fetch request. \(error.localizedDescription)")
+                return
+            }
+            
+            // Make sure data is there
+            guard let data = data else { NSLog("Data was invalid"); return }
+            
+            //Serialize the json from the bits we get back
+            guard let jsonDictionary = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any] else { NSLog("Error during JSONSerialization"); return }
+            
+            // Create miner objects
+            
+            guard let accountInfo = AccountInfo(dictionary: jsonDictionary) else {  NSLog("AccountInfo Error in MinerController"); return }
+            
+            completion(accountInfo)
+        }
+        
+    }
     
 }

@@ -24,5 +24,4 @@ class Account {
         self.ethOSaddress = ethOSaddress
         self.accountURL = URL
     }
-    
 }

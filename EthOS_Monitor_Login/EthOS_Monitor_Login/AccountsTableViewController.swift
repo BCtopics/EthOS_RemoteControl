@@ -74,7 +74,13 @@ class AccountsTableViewController: UITableViewController {
         self.present(alert, animated: true)
     }
 
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let account = AccountController.shared.accounts[indexPath.row]
+        AccountController.fetchMinersFromAccount(account: account) { (accountInfo) in
+            print(accountInfo.totalHashrate)//FIXME: - Obvious
+        }
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
