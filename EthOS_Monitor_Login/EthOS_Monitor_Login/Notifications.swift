@@ -10,4 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let refreshTableView = Notification.Name("refreshTableView")
+    static let refreshCollectionView = Notification.Name("refreshCollectionView")
 }

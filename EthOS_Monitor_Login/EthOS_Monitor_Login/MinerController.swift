@@ -22,12 +22,15 @@ class MinerController {
             
             let minerInfo = dictionary[key] as? [String: Any]
             
-            guard let newMiner = Miner(dictionary: minerInfo!) else { NSLog("Miner Is Nil during Creation"); return }
-            miners.append(newMiner)
+            guard var newMiner = Miner(dictionary: minerInfo!) else { NSLog("Miner Is Nil during Creation"); return }
+            newMiner.rigName = key
+            print("\(newMiner.rigName) is being appended now")
+            self.miners.append(newMiner)
         }
 
         
         print("done")
+        NotificationCenter.default.post(name: .refreshCollectionView, object: nil)
     }
     
 }

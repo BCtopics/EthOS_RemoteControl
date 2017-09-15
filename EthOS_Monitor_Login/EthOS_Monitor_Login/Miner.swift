@@ -14,7 +14,7 @@ class Miner {
     
     let totalHashrate: String
     let ipaddress: String
-    let rigName: String
+    var rigName: String
 
     //MARK: - Initilizers
     

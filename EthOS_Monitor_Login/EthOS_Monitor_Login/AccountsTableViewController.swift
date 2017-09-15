@@ -76,9 +76,9 @@ class AccountsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let account = AccountController.shared.accounts[indexPath.row]
-        AccountController.fetchMinersFromAccount(account: account) { (accountInfo) in
-            print(accountInfo.totalHashrate)//FIXME: - Obvious
-        }
+//        AccountController.fetchMinersFromAccount(account: account) { (accountInfo) in
+//            print(accountInfo.totalHashrate)//FIXME: - Obvious
+//        }
         
     }
 

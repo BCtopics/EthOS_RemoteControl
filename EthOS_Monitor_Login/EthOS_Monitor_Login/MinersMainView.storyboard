@@ -60,7 +60,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ca3-XK-es7" customClass="MinerCollectionViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="minerCell" id="Ca3-XK-es7" customClass="MinerCollectionViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
                                         <rect key="frame" x="3" y="0.0" width="369" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -103,6 +103,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vPQ-ub-4az" id="BbO-jB-XNJ"/>
+                                    <outlet property="delegate" destination="vPQ-ub-4az" id="bG1-Dh-43A"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,6 +125,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="averageTemp" destination="5uB-nF-ZMt" id="82Z-Qn-oKr"/>
+                        <outlet property="minersCollectionView" destination="vhB-q5-RK6" id="Eds-cQ-U7S"/>
                         <outlet property="totalGPUSLabel" destination="1FD-uY-X4d" id="C5J-uv-1e2"/>
                         <outlet property="totalHashRate" destination="DYb-Kn-a4o" id="WrC-my-ruT"/>
                         <outlet property="totalRigsLabel" destination="CJf-A3-nSn" id="WaJ-jN-ovu"/>

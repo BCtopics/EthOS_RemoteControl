@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MinersMainViewController: UIViewController {
+class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.fetchInfo()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionData), name: .refreshCollectionView, object: nil)
     }
     
     var account: Account?
@@ -64,11 +65,73 @@ class MinersMainViewController: UIViewController {
         }
     }
     
+    func reloadCollectionData() {
+        DispatchQueue.main.async {
+            
+            self.minersCollectionView.reloadData()
+        }
+    }
+    
+     // MARK: - Navigation
+
+    
+    // MARK: UICollectionViewDataSource
+
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return MinerController.shared.miners.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "minerCell", for: indexPath) as? MinerCollectionViewCell else { return UICollectionViewCell() }
+        
+        let miner = MinerController.shared.miners[indexPath.row]
+        
+        cell.rigName.text = miner.rigName
+        cell.totalHashrate.text = miner.totalHashrate //FIXME: - Make this actually total hashrate
+        cell.ipaddresslabel.text = miner.ipaddress
+        
+        return cell
+    }
+    
+    // MARK: UICollectionViewDelegate
+    
+    /*
+     // Uncomment this method to specify if the specified item should be highlighted during tracking
+     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment this method to specify if the specified item should be selected
+     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+     return true
+     }
+     */
+    
+    /*
+     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+     
+     }
+     */
+
+    
     //MARK: - IBOutlets
     
     @IBOutlet weak var totalHashRate: UILabel!
     @IBOutlet weak var totalGPUSLabel: UILabel!
     @IBOutlet weak var totalRigsLabel: UILabel!
     @IBOutlet weak var averageTemp: UILabel!
+    @IBOutlet weak var minersCollectionView: UICollectionView!
     
 }
