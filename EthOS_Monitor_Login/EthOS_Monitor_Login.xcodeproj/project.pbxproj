@@ -11,7 +11,23 @@
 		6B4BF9191F6B526B001DDC8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BF9171F6B526B001DDC8C /* Main.storyboard */; };
 		6B4BF91B1F6B526B001DDC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BF91A1F6B526B001DDC8C /* Assets.xcassets */; };
 		6B4BF91E1F6B526B001DDC8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BF91C1F6B526B001DDC8C /* LaunchScreen.storyboard */; };
+		6B4BF92D1F6B5334001DDC8C /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */; };
+		6B4BF92E1F6B5334001DDC8C /* NMSSH.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6B4BF92F1F6B5334001DDC8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6B4BF92E1F6B5334001DDC8C /* NMSSH.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6B4BF9101F6B526B001DDC8C /* EthOS_Monitor_Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EthOS_Monitor_Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +36,7 @@
 		6B4BF91A1F6B526B001DDC8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B4BF91D1F6B526B001DDC8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B4BF91F1F6B526B001DDC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMSSH.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B4BF92D1F6B5334001DDC8C /* NMSSH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +54,7 @@
 		6B4BF9071F6B526B001DDC8C = {
 			isa = PBXGroup;
 			children = (
+				6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */,
 				6B4BF9121F6B526B001DDC8C /* EthOS_Monitor_Login */,
 				6B4BF9111F6B526B001DDC8C /* Products */,
 			);
@@ -127,6 +146,7 @@
 				6B4BF90C1F6B526B001DDC8C /* Sources */,
 				6B4BF90D1F6B526B001DDC8C /* Frameworks */,
 				6B4BF90E1F6B526B001DDC8C /* Resources */,
+				6B4BF92F1F6B5334001DDC8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +334,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N8EMAYLL43;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = EthOS_Monitor_Login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bradleygilmore.EthOS-Monitor-Login";
@@ -327,6 +351,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = N8EMAYLL43;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = EthOS_Monitor_Login/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bradleygilmore.EthOS-Monitor-Login";
