@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Accounts-->
         <scene sceneID="nPw-qo-7fD">
             <objects>
-                <tableViewController id="GQw-kG-9xg" sceneMemberID="viewController">
+                <tableViewController id="GQw-kG-9xg" customClass="AccountsTableViewController" customModule="EthOS_Monitor_Login" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="2o0-17-7rI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="dz8-dX-w3e" customClass="AccountsTableViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountsCell" rowHeight="60" id="dz8-dX-w3e" customClass="AccountsTableViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dz8-dX-w3e" id="Ldo-Mx-I9K">
@@ -50,7 +50,9 @@
                             <outlet property="delegate" destination="GQw-kG-9xg" id="9ho-HX-ZvL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="myj-l6-KAc"/>
+                    <navigationItem key="navigationItem" title="Accounts" id="myj-l6-KAc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NGj-Zu-dtm"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrA-yE-XZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

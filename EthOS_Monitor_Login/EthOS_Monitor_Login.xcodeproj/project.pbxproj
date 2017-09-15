@@ -16,6 +16,7 @@
 		6BA12F351F6C3B65009103D3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F341F6C3B65009103D3 /* Notifications.swift */; };
 		6BA12F381F6C3BC2009103D3 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */; };
 		6BA12F3A1F6C3EFD009103D3 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F391F6C3EFD009103D3 /* AccountsTableViewCell.swift */; };
+		6BA12F3C1F6C3F81009103D3 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F3B1F6C3F81009103D3 /* AccountsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		6BA12F341F6C3B65009103D3 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		6BA12F391F6C3EFD009103D3 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
+		6BA12F3B1F6C3F81009103D3 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */,
+				6BA12F3B1F6C3F81009103D3 /* AccountsTableViewController.swift */,
 			);
 			name = AccountTableViewController;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA12F351F6C3B65009103D3 /* Notifications.swift in Sources */,
+				6BA12F3C1F6C3F81009103D3 /* AccountsTableViewController.swift in Sources */,
 				6B4BF9141F6B526B001DDC8C /* AppDelegate.swift in Sources */,
 				6BA12F3A1F6C3EFD009103D3 /* AccountsTableViewCell.swift in Sources */,
 			);
