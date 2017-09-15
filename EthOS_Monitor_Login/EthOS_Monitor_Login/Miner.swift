@@ -12,7 +12,7 @@ class Miner {
     
     //MARK: - Properties
     
-    let totalHashrate: String
+    var totalHashrate: String
     let ipaddress: String
     var rigName: String
 
@@ -27,6 +27,37 @@ class Miner {
         self.totalHashrate = totalHashrate
         self.rigName = rigName
         self.ipaddress = ipaddress
+        self.totalHashrate = fullHash(hashes: totalHashrate)
+    }
+    
+    //MARK: - Calculations
+    
+    func fullHash(hashes: String) -> String {
+        var hashes2 = hashes
+        var hashTotalString = ""
+        var hashTotal = 0.0
+        var hashArray: [Double] = []
+        var hashString = ""
+        var counter = 1
+        
+        for i in hashes2.characters {
+            if i == " " {
+                hashArray.append(Double(hashString)!)
+                hashString = ""
+                counter += 1
+            } else if hashes2.characters.count == counter {
+                hashArray.append(Double(hashString)!)
+                hashString = ""
+            } else {
+                hashString += "\(i)"
+                counter += 1
+            }
+        }
+        
+        hashTotal = hashArray.reduce(0, +)
+        hashTotalString = String(hashTotal)
+        print(hashTotalString)
+        return hashTotalString
     }
     
 }
