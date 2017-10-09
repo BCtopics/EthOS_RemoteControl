@@ -49,11 +49,11 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
                 
                 // Average Temp Color
                 
-                if Int(accountInfo.averageTemp)! > 70 && Int(accountInfo.averageTemp)! < 80 {
+                if Double(accountInfo.averageTemp)! > 70.0 && Double(accountInfo.averageTemp)! < 80.0 {
                     self.averageTemp.textColor = .orange
-                } else if Int(accountInfo.averageTemp)! >= 80 {
+                } else if Double(accountInfo.averageTemp)! >= 80.0 {
                     self.averageTemp.textColor = .red
-                } else if Int(accountInfo.averageTemp)! <= 70 {
+                } else if Double(accountInfo.averageTemp)! <= 70.0 {
                     self.averageTemp.textColor = .green
                 }
                 

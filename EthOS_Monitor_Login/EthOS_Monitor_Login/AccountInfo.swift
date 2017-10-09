@@ -27,8 +27,8 @@ class AccountInfo {
         guard let totalGPUS = dictionary[Keys.kTotalGPUS] as? Int else { NSLog("Total GPUS Is NIL"); return nil }
         guard let aliveRigs = dictionary[Keys.kAliveRigs] as? Int else { NSLog("Alive Rigs Is NIL"); return nil }
         guard let totalRigs = dictionary[Keys.kTotalRigs] as? Int else { NSLog("Total Rigs Is NIL"); return nil }
-        guard let totalHashrate = dictionary[Keys.kTotalHash] as? Int else { NSLog("Total Hashrate Is NIL"); return nil }
-        guard let averageTemp = dictionary[Keys.kAvgTemp] as? Int else { NSLog("Average Temp Is NIL"); return nil }
+        guard let totalHashrate = dictionary[Keys.kTotalHash] as? Double else { NSLog("Total Hashrate Is NIL"); return nil }
+        guard let averageTemp = dictionary[Keys.kAvgTemp] as? Double else { NSLog("Average Temp Is NIL"); return nil }
         
         self.totalGPUS = String(totalGPUS)
         self.aliveGPUS = String(aliveGPUS)
