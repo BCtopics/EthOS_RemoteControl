@@ -129,6 +129,7 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let item = collectionView.cellForItem(at: indexPath) as! MinerCollectionViewCell
         //FIXME: - What was I doing with this?
+        //NOTES: - I believe this was to click on for more information?
     }
     
     
