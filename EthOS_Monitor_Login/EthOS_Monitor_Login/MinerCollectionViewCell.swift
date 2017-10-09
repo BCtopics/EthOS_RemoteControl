@@ -17,5 +17,10 @@ class MinerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ipaddresslabel: UILabel!
     @IBOutlet weak var connectButton: UIButton!
     
+    @IBAction func connectButtonTapped(_ sender: Any) {
+        
+        
+        
+    }
     
 }
