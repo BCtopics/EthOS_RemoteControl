@@ -9,7 +9,7 @@
 import UIKit
 
 class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,11 +72,11 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-     // MARK: - Navigation
-
+    // MARK: - Navigation
+    
     
     // MARK: UICollectionViewDataSource
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return MinerController.shared.miners.count
@@ -124,7 +124,13 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
      
      }
      */
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let item = collectionView.cellForItem(at: indexPath) as! MinerCollectionViewCell
+        //FIXME: - What was I doing with this?
+    }
+    
     
     //MARK: - IBOutlets
     
