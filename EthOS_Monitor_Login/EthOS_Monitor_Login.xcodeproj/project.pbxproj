@@ -11,6 +11,7 @@
 		6B14DC9A1F6C503900718120 /* MinerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14DC991F6C503900718120 /* MinerController.swift */; };
 		6B3986181F8C1FD400229B06 /* MinerDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3986171F8C1FD400229B06 /* MinerDetailView.storyboard */; };
 		6B39861A1F8C1FE600229B06 /* MinerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3986191F8C1FE600229B06 /* MinerDetailViewController.swift */; };
+		6B39861C1F8C232E00229B06 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39861B1F8C232E00229B06 /* SessionController.swift */; };
 		6B4BF9141F6B526B001DDC8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4BF9131F6B526B001DDC8C /* AppDelegate.swift */; };
 		6B4BF9191F6B526B001DDC8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BF9171F6B526B001DDC8C /* Main.storyboard */; };
 		6B4BF91B1F6B526B001DDC8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BF91A1F6B526B001DDC8C /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		6B14DC991F6C503900718120 /* MinerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinerController.swift; sourceTree = "<group>"; };
 		6B3986171F8C1FD400229B06 /* MinerDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MinerDetailView.storyboard; sourceTree = "<group>"; };
 		6B3986191F8C1FE600229B06 /* MinerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerDetailViewController.swift; sourceTree = "<group>"; };
+		6B39861B1F8C232E00229B06 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
 		6B4BF9101F6B526B001DDC8C /* EthOS_Monitor_Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EthOS_Monitor_Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4BF9131F6B526B001DDC8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B4BF9181F6B526B001DDC8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				6BA12F341F6C3B65009103D3 /* Notifications.swift */,
 				6BA12F411F6C4595009103D3 /* NetworkController.swift */,
 				6BA12F451F6C471C009103D3 /* Keys.swift */,
+				6B39861B1F8C232E00229B06 /* SessionController.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				6BA12F4B1F6C492A009103D3 /* MinersMainViewController.swift in Sources */,
 				6BA12F351F6C3B65009103D3 /* Notifications.swift in Sources */,
 				6BA12F3C1F6C3F81009103D3 /* AccountsTableViewController.swift in Sources */,
+				6B39861C1F8C232E00229B06 /* SessionController.swift in Sources */,
 				6BA12F401F6C40E7009103D3 /* AccountController.swift in Sources */,
 				6B4BF9141F6B526B001DDC8C /* AppDelegate.swift in Sources */,
 				6B14DC981F6C4E7C00718120 /* MinerCollectionViewCell.swift in Sources */,
