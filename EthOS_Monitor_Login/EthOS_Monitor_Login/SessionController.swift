@@ -20,7 +20,7 @@ class SessionController: NSObject, NMSSHChannelDelegate {
     //MARK: - Connection Start / End
     
     func startConnection() {
-        
+        //FIXME: - This is going to have to take into account the ipaddress, username, and password for each specific rig
         self.session = NMSSHSession(host: "192.168.1.24", andUsername: "ethos")!
         guard let session = session else { NSLog("Session is Nil"); return }
         session.connect()
