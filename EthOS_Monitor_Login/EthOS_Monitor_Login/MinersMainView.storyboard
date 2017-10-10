@@ -95,6 +95,7 @@
                                                     <state key="normal" title="Connect"/>
                                                     <connections>
                                                         <action selector="connectButtonTapped:" destination="Ca3-XK-es7" eventType="touchUpInside" id="eAN-24-Zr5"/>
+                                                        <segue destination="UXU-OE-gcf" kind="show" id="LaH-NV-Jnx"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -146,6 +147,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEk-1B-YHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1917.5999999999999" y="114.69265367316342"/>
+        </scene>
+        <!--CommandViewController-->
+        <scene sceneID="T0a-ud-ZAU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CommandViewController" id="UXU-OE-gcf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qip-hZ-qYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2774" y="114"/>
         </scene>
     </scenes>
 </document>

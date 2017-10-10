@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6B14DC981F6C4E7C00718120 /* MinerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14DC971F6C4E7C00718120 /* MinerCollectionViewCell.swift */; };
 		6B14DC9A1F6C503900718120 /* MinerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B14DC991F6C503900718120 /* MinerController.swift */; };
+		6B2D73771F8C4D34002A2E1A /* CommandViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B2D73761F8C4D34002A2E1A /* CommandViewController.storyboard */; };
+		6B2D737B1F8C4D69002A2E1A /* CommandsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D737A1F8C4D69002A2E1A /* CommandsViewController.swift */; };
 		6B3986181F8C1FD400229B06 /* MinerDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B3986171F8C1FD400229B06 /* MinerDetailView.storyboard */; };
 		6B39861A1F8C1FE600229B06 /* MinerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3986191F8C1FE600229B06 /* MinerDetailViewController.swift */; };
 		6B39861C1F8C232E00229B06 /* SessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39861B1F8C232E00229B06 /* SessionController.swift */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		6B14DC971F6C4E7C00718120 /* MinerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinerCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B14DC991F6C503900718120 /* MinerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinerController.swift; sourceTree = "<group>"; };
+		6B2D73761F8C4D34002A2E1A /* CommandViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommandViewController.storyboard; sourceTree = "<group>"; };
+		6B2D737A1F8C4D69002A2E1A /* CommandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsViewController.swift; sourceTree = "<group>"; };
 		6B3986171F8C1FD400229B06 /* MinerDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MinerDetailView.storyboard; sourceTree = "<group>"; };
 		6B3986191F8C1FE600229B06 /* MinerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinerDetailViewController.swift; sourceTree = "<group>"; };
 		6B39861B1F8C232E00229B06 /* SessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B2D73751F8C4D22002A2E1A /* CommandViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6B2D73761F8C4D34002A2E1A /* CommandViewController.storyboard */,
+				6B2D737A1F8C4D69002A2E1A /* CommandsViewController.swift */,
+			);
+			name = CommandViewController;
+			sourceTree = "<group>";
+		};
 		6B3986161F8C1FBF00229B06 /* MinerDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +188,7 @@
 		6B4BF92A1F6B52AC001DDC8C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6B2D73751F8C4D22002A2E1A /* CommandViewController */,
 				6B3986161F8C1FBF00229B06 /* MinerDetailViewController */,
 				6BA12F491F6C4914009103D3 /* MinersMainViewController */,
 				6BA12F361F6C3BB3009103D3 /* AccountTableViewController */,
@@ -278,6 +292,7 @@
 				6BA12F381F6C3BC2009103D3 /* Accounts.storyboard in Resources */,
 				6BA12F4D1F6C4947009103D3 /* MinersMainView.storyboard in Resources */,
 				6B4BF9191F6B526B001DDC8C /* Main.storyboard in Resources */,
+				6B2D73771F8C4D34002A2E1A /* CommandViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +311,7 @@
 				6BA12F401F6C40E7009103D3 /* AccountController.swift in Sources */,
 				6B4BF9141F6B526B001DDC8C /* AppDelegate.swift in Sources */,
 				6B14DC981F6C4E7C00718120 /* MinerCollectionViewCell.swift in Sources */,
+				6B2D737B1F8C4D69002A2E1A /* CommandsViewController.swift in Sources */,
 				6BA12F441F6C4677009103D3 /* Miner.swift in Sources */,
 				6BA12F421F6C4595009103D3 /* NetworkController.swift in Sources */,
 				6BA12F481F6C4752009103D3 /* AccountInfo.swift in Sources */,

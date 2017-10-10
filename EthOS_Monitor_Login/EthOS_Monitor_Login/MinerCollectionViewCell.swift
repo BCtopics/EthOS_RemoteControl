@@ -19,8 +19,9 @@ class MinerCollectionViewCell: UICollectionViewCell {
     
     @IBAction func connectButtonTapped(_ sender: Any) {
         
+        guard let ipAddress = ipaddresslabel.text else { NSLog("IPAddress Is Nil, MinerCollectionViewCell"); return }
         
-        
+        SessionController.shared.startConnection(ip: ipAddress)
     }
     
 }

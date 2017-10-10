@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wkZ-tu-691">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Commands View Controller-->
+        <scene sceneID="Ehq-hD-NuN">
+            <objects>
+                <viewController id="wkZ-tu-691" customClass="CommandsViewController" customModule="EthOSRemoteLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IUZ-Gb-gKW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ech-Iu-Rh5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zo1-7T-6yf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2R-JP-U4G">
+                                <rect key="frame" x="122" y="617" width="51" height="30"/>
+                                <state key="normal" title="Update"/>
+                                <connections>
+                                    <action selector="updateButtonTapped:" destination="wkZ-tu-691" eventType="touchUpInside" id="O0L-p7-DFK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p5G-EU-vrO">
+                                <rect key="frame" x="203" y="617" width="50" height="30"/>
+                                <state key="normal" title="Reboot"/>
+                                <connections>
+                                    <action selector="rebootButtonTapped:" destination="wkZ-tu-691" eventType="touchUpInside" id="6fi-eM-I9s"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commands Show Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnC-Ij-0ey">
+                                <rect key="frame" x="16" y="40" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DOP-f9-Xhu">
+                                <rect key="frame" x="282" y="616" width="51" height="31"/>
+                                <connections>
+                                    <action selector="simpleSwitchToggleTapped:" destination="wkZ-tu-691" eventType="valueChanged" id="2bK-eO-pQb"/>
+                                </connections>
+                            </switch>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQe-OO-znP">
+                                <rect key="frame" x="16" y="28" width="343" height="581"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RnC-Ij-0ey" firstAttribute="top" secondItem="IUZ-Gb-gKW" secondAttribute="bottom" constant="20" id="9tc-Go-Drh"/>
+                            <constraint firstItem="P2R-JP-U4G" firstAttribute="top" secondItem="JQe-OO-znP" secondAttribute="bottom" constant="8" symbolic="YES" id="AyL-YY-MEh"/>
+                            <constraint firstItem="DOP-f9-Xhu" firstAttribute="leading" secondItem="p5G-EU-vrO" secondAttribute="trailing" constant="29" id="Fye-m5-yUv"/>
+                            <constraint firstItem="P2R-JP-U4G" firstAttribute="leading" secondItem="Zo1-7T-6yf" secondAttribute="leadingMargin" constant="106" id="INP-VA-Tic"/>
+                            <constraint firstItem="Ech-Iu-Rh5" firstAttribute="top" secondItem="P2R-JP-U4G" secondAttribute="bottom" constant="20" id="Qsf-4t-QaI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RnC-Ij-0ey" secondAttribute="trailing" id="Xok-Sc-x34"/>
+                            <constraint firstItem="RnC-Ij-0ey" firstAttribute="leading" secondItem="Zo1-7T-6yf" secondAttribute="leadingMargin" id="YA4-dA-jWP"/>
+                            <constraint firstItem="JQe-OO-znP" firstAttribute="trailing" secondItem="Zo1-7T-6yf" secondAttribute="trailingMargin" id="bUh-hw-XjM"/>
+                            <constraint firstItem="Ech-Iu-Rh5" firstAttribute="top" secondItem="DOP-f9-Xhu" secondAttribute="bottom" constant="20" id="c0P-t1-gbz"/>
+                            <constraint firstItem="JQe-OO-znP" firstAttribute="top" secondItem="IUZ-Gb-gKW" secondAttribute="bottom" constant="8" symbolic="YES" id="kP4-AR-aFz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p5G-EU-vrO" secondAttribute="trailing" constant="106" id="kpB-Cj-KF7"/>
+                            <constraint firstItem="JQe-OO-znP" firstAttribute="leading" secondItem="Zo1-7T-6yf" secondAttribute="leadingMargin" id="wUD-ry-0il"/>
+                            <constraint firstItem="Ech-Iu-Rh5" firstAttribute="top" secondItem="p5G-EU-vrO" secondAttribute="bottom" constant="20" id="yk2-Ty-htC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g7Y-V2-1lf"/>
+                    </view>
+                    <connections>
+                        <outlet property="commandLineLabel" destination="JQe-OO-znP" id="fjD-uT-0Ge"/>
+                        <outlet property="simpleCommandLineLabel" destination="RnC-Ij-0ey" id="rgg-Yy-Zaw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wfx-ef-IhR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="131.78410794602701"/>
+        </scene>
+    </scenes>
+</document>

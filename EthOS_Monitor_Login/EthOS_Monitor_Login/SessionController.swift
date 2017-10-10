@@ -15,13 +15,13 @@ class SessionController: NSObject, NMSSHChannelDelegate {
     
     var session: NMSSHSession?
     var channel: NMSSHChannel?
-//    weak var delegate:CommandsViewController?
+    weak var delegate:CommandsViewController?
     
     //MARK: - Connection Start / End
     
-    func startConnection() {
+    func startConnection(ip: String) {
         //FIXME: - This is going to have to take into account the ipaddress, username, and password for each specific rig
-        self.session = NMSSHSession(host: "192.168.1.24", andUsername: "ethos")!
+        self.session = NMSSHSession(host: ip, andUsername: "ethos")!
         guard let session = session else { NSLog("Session is Nil"); return }
         session.connect()
         if session.isConnected == true{
@@ -57,7 +57,7 @@ class SessionController: NSObject, NMSSHChannelDelegate {
     
     func channel(_ channel: NMSSHChannel!, didReadData message: String!) {
         print("Reading Data: \(message!)")
-//        delegate?.updateViews(message: message)
+        delegate?.updateViews(message: message)
         
     }
     
