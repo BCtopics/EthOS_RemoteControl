@@ -20,11 +20,12 @@
 		6B4BF91E1F6B526B001DDC8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4BF91C1F6B526B001DDC8C /* LaunchScreen.storyboard */; };
 		6B4BF92D1F6B5334001DDC8C /* NMSSH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */; };
 		6B4BF92E1F6B5334001DDC8C /* NMSSH.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6B8E3EC71F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B8E3EC51F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodeld */; };
+		6B8E3EC91F8E9A0200E3DAC1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8E3EC81F8E9A0200E3DAC1 /* CoreDataStack.swift */; };
 		6BA12F351F6C3B65009103D3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F341F6C3B65009103D3 /* Notifications.swift */; };
 		6BA12F381F6C3BC2009103D3 /* Accounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */; };
 		6BA12F3A1F6C3EFD009103D3 /* AccountsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F391F6C3EFD009103D3 /* AccountsTableViewCell.swift */; };
 		6BA12F3C1F6C3F81009103D3 /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F3B1F6C3F81009103D3 /* AccountsTableViewController.swift */; };
-		6BA12F3E1F6C3FF1009103D3 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F3D1F6C3FF1009103D3 /* Account.swift */; };
 		6BA12F401F6C40E7009103D3 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F3F1F6C40E7009103D3 /* AccountController.swift */; };
 		6BA12F421F6C4595009103D3 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F411F6C4595009103D3 /* NetworkController.swift */; };
 		6BA12F441F6C4677009103D3 /* Miner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA12F431F6C4677009103D3 /* Miner.swift */; };
@@ -63,11 +64,12 @@
 		6B4BF91D1F6B526B001DDC8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B4BF91F1F6B526B001DDC8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NMSSH.framework; sourceTree = "<group>"; };
+		6B8E3EC61F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EthOS_Monitor_Login.xcdatamodel; sourceTree = "<group>"; };
+		6B8E3EC81F8E9A0200E3DAC1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6BA12F341F6C3B65009103D3 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		6BA12F371F6C3BC2009103D3 /* Accounts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Accounts.storyboard; sourceTree = "<group>"; };
 		6BA12F391F6C3EFD009103D3 /* AccountsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewCell.swift; sourceTree = "<group>"; };
 		6BA12F3B1F6C3F81009103D3 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsTableViewController.swift; sourceTree = "<group>"; };
-		6BA12F3D1F6C3FF1009103D3 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		6BA12F3F1F6C40E7009103D3 /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		6BA12F411F6C4595009103D3 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		6BA12F431F6C4677009103D3 /* Miner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Miner.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				6B4BF9131F6B526B001DDC8C /* AppDelegate.swift */,
+				6B8E3EC41F8E995B00E3DAC1 /* CoreData */,
 				6B4BF92B1F6B52B1001DDC8C /* Helpers */,
 				6B4BF92A1F6B52AC001DDC8C /* ViewControllers */,
 				6B4BF9291F6B52A8001DDC8C /* Views */,
@@ -160,7 +163,6 @@
 		6B4BF9271F6B52A1001DDC8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6BA12F3D1F6C3FF1009103D3 /* Account.swift */,
 				6BA12F431F6C4677009103D3 /* Miner.swift */,
 				6BA12F471F6C4752009103D3 /* AccountInfo.swift */,
 			);
@@ -205,6 +207,15 @@
 				6B39861B1F8C232E00229B06 /* SessionController.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		6B8E3EC41F8E995B00E3DAC1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6B8E3EC51F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodeld */,
+				6B8E3EC81F8E9A0200E3DAC1 /* CoreDataStack.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		6BA12F361F6C3BB3009103D3 /* AccountTableViewController */ = {
@@ -303,7 +314,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BA12F3E1F6C3FF1009103D3 /* Account.swift in Sources */,
 				6BA12F4B1F6C492A009103D3 /* MinersMainViewController.swift in Sources */,
 				6BA12F351F6C3B65009103D3 /* Notifications.swift in Sources */,
 				6BA12F3C1F6C3F81009103D3 /* AccountsTableViewController.swift in Sources */,
@@ -311,10 +321,12 @@
 				6BA12F401F6C40E7009103D3 /* AccountController.swift in Sources */,
 				6B4BF9141F6B526B001DDC8C /* AppDelegate.swift in Sources */,
 				6B14DC981F6C4E7C00718120 /* MinerCollectionViewCell.swift in Sources */,
+				6B8E3EC71F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodeld in Sources */,
 				6B2D737B1F8C4D69002A2E1A /* CommandsViewController.swift in Sources */,
 				6BA12F441F6C4677009103D3 /* Miner.swift in Sources */,
 				6BA12F421F6C4595009103D3 /* NetworkController.swift in Sources */,
 				6BA12F481F6C4752009103D3 /* AccountInfo.swift in Sources */,
+				6B8E3EC91F8E9A0200E3DAC1 /* CoreDataStack.swift in Sources */,
 				6B14DC9A1F6C503900718120 /* MinerController.swift in Sources */,
 				6B39861A1F8C1FE600229B06 /* MinerDetailViewController.swift in Sources */,
 				6BA12F461F6C471C009103D3 /* Keys.swift in Sources */,
@@ -493,6 +505,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6B8E3EC51F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6B8E3EC61F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodel */,
+			);
+			currentVersion = 6B8E3EC61F8E999100E3DAC1 /* EthOS_Monitor_Login.xcdatamodel */;
+			path = EthOS_Monitor_Login.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6B4BF9081F6B526B001DDC8C /* Project object */;
 }
