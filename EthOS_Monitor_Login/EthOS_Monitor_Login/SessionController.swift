@@ -44,7 +44,6 @@ class SessionController: NSObject, NMSSHChannelDelegate {
         }
     }
     
-    
     //MARK: - Send Commands
     
     func sendCommand(command: String) {
