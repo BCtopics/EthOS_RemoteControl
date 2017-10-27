@@ -65,7 +65,7 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    func reloadCollectionData() {
+    @objc func reloadCollectionData() {
         DispatchQueue.main.async {
             
             self.minersCollectionView.reloadData()

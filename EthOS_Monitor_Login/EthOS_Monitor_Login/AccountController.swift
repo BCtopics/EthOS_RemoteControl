@@ -20,7 +20,7 @@ class AccountController {
     
     func createAccount(nickName: String, ethOSaddress: String) {
         
-        let account = Account(nickName: nickName, ethOSaddress: ethOSaddress, URL: createURL(ethOSaddress: ethOSaddress))
+        let account = Account(nickName: nickName, ethOSaddress: ethOSaddress, accountURL: createURL(ethOSaddress: ethOSaddress))
         self.accounts.append(account)
         NotificationCenter.default.post(name: .refreshTableView, object: nil)
     }
@@ -43,7 +43,7 @@ class AccountController {
         
         // Perform Request
         
-        NetworkController.performRequest(for: account.accountURL, httpMethod: .get, urlParameters: urlParamaters, body: nil) { (data, error) in
+        NetworkController.performRequest(for: account.accountURL!, httpMethod: .get, urlParameters: urlParamaters, body: nil) { (data, error) in //FIXME: - Fix Unwrapp
             
             // Error Handle
             if let error = error {

@@ -39,7 +39,7 @@ class AccountsTableViewController: UITableViewController {
     
     //MARK: - Refreshing
     
-    func reloadTableData() {
+    @objc func reloadTableData() {
         self.tableView.reloadData()
     }
     
