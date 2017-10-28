@@ -151,8 +151,8 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
             self.tableView.isHidden = false
         }
     }
-    
-    func addColors() {
+
+    func addColors() { //FIXME: - I Don't really know what color to pick?
         self.navigationController?.navigationBar.barTintColor = UIColor.backgroundDarkerGreen
         self.tableView.backgroundColor = UIColor.backgroundTintGreen
         self.noAccountsView.backgroundColor = UIColor.backgroundTintGreen
