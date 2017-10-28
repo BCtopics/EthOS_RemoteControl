@@ -44,6 +44,8 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
             cell.accountNameLabel.text = account.ethOSaddress
         }
         
+        cell.backgroundColor = UIColor.backgroundTintGreen
+        
         return cell
     }
     
@@ -57,6 +59,7 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
     //MARK: - IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noAccountsView: UIView!
     
     //MARK: - IBActions
     
@@ -151,7 +154,8 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
     
     func addColors() {
         self.navigationController?.navigationBar.barTintColor = UIColor.backgroundDarkerGreen
-        self.tableView.backgroundColor = UIColor.backgroundGray
+        self.tableView.backgroundColor = UIColor.backgroundTintGreen
+        self.noAccountsView.backgroundColor = UIColor.backgroundTintGreen
     }
 
 }

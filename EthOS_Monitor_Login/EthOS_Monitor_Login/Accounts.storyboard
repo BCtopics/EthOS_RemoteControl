@@ -100,6 +100,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noAccountsView" destination="2jY-O2-hcH" id="zVG-iP-fZm"/>
                         <outlet property="tableView" destination="vCF-Gg-tJb" id="lMk-Lf-F9N"/>
                     </connections>
                 </viewController>
