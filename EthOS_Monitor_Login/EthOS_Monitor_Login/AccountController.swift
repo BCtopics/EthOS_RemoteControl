@@ -16,6 +16,7 @@ class AccountController {
     static let shared = AccountController()
     
     //MARK: - CoreData
+    
     var fetchResultsController: NSFetchedResultsController<Account>
     
     init() {
