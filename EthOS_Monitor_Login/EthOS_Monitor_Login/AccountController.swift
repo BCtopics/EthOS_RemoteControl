@@ -15,8 +15,6 @@ class AccountController {
     
     static let shared = AccountController()
     
-    var accounts: [Account] = []
-    
     //MARK: - CoreData
     var fetchResultsController: NSFetchedResultsController<Account>
     
@@ -31,7 +29,6 @@ class AccountController {
         
         do {
             try fetchResultsController.performFetch()
-            accounts = fetchResultsController.fetchedObjects! //FIXME: - Bang
         } catch {
             NSLog("\(error.localizedDescription)")
         }
@@ -44,20 +41,26 @@ class AccountController {
         
         do {
             try moc.save()
+            NotificationCenter.default.post(name: .refreshTableView, object: nil)
         } catch {
             NSLog("Error saving \(error.localizedDescription)")
         }
         
     }
     
+    func remove(account: Account) {
+        
+        let moc = CoreDataStack.context
+        moc.delete(account)
+        saveToPersistentStore()
+    }
+    
     //MARK: - Creator Methods
     
     func createAccount(nickName: String, ethOSaddress: String) {
         
-        let account = Account(nickName: nickName, ethOSaddress: ethOSaddress, accountURL: createURL(ethOSaddress: ethOSaddress))
-        self.accounts.append(account)
+        _ = Account(nickName: nickName, ethOSaddress: ethOSaddress, accountURL: createURL(ethOSaddress: ethOSaddress))
         saveToPersistentStore()
-        NotificationCenter.default.post(name: .refreshTableView, object: nil)
     }
     
     func createURL(ethOSaddress: String) -> URL {
@@ -66,10 +69,6 @@ class AccountController {
         guard let url = baseURL else { NSLog("baseURL was nil"); return URL(string: "http://3df0c9.ethosdistro.com/")! }
         
         return url
-    }
-    
-    func fetchFromCoreData() {
-        
     }
     
     //MARK: - Fetch / GET Method

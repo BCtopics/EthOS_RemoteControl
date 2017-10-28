@@ -7,26 +7,30 @@
 //
 
 import UIKit
+import CoreData
 
-class AccountsTableViewController: UITableViewController {
+class AccountsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .refreshTableView, object: nil)
+        AccountController.shared.fetchResultsController.delegate = self
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AccountController.shared.accounts.count
+        guard let section = AccountController.shared.fetchResultsController.fetchedObjects?.count else { return 0 }
+        
+        return section
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "accountsCell", for: indexPath) as? AccountsTableViewCell else { NSLog("AccountsTableViewCell Was Nil"); return UITableViewCell() }
         
-        let account = AccountController.shared.accounts[indexPath.row]
+        let account = AccountController.shared.fetchResultsController.object(at: indexPath)
         
         if account.nickName != "" {
             cell.accountNameLabel.text = account.nickName
@@ -75,32 +79,23 @@ class AccountsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let account = AccountController.shared.accounts[indexPath.row]
+//        let account = AccountController.shared.accounts[indexPath.row]
 //        AccountController.fetchMinersFromAccount(account: account) { (accountInfo) in
 //            print(accountInfo.totalHashrate)//FIXME: - Obvious
 //        }
         
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            
+            
+            let account = AccountController.shared.fetchResultsController.object(at: indexPath)
+            AccountController.shared.remove(account: account)
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -125,9 +120,9 @@ class AccountsTableViewController: UITableViewController {
         
         if segue.identifier == "toMinersMain" {
             if let minersVC = segue.destination as? MinersMainViewController {
-                let index = self.tableView.indexPathForSelectedRow?.row
+                guard let index = self.tableView.indexPathForSelectedRow else { NSLog("Index path invalid"); return }
                 
-                let account = AccountController.shared.accounts[index!]//FIXME: - Fix Bang
+                let account = AccountController.shared.fetchResultsController.object(at: index)
                 minersVC.account = account
             }
         }
