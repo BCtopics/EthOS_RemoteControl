@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 class AccountController {
     
@@ -16,12 +17,46 @@ class AccountController {
     
     var accounts: [Account] = []
     
+    //MARK: - CoreData
+    var fetchResultsController: NSFetchedResultsController<Account>
+    
+    init() {
+        let request: NSFetchRequest<Account> = Account.fetchRequest()
+        
+        let sort = NSSortDescriptor(key: "ethOSaddress", ascending: true)
+        
+        request.sortDescriptors = [sort]
+        
+        fetchResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        do {
+            try fetchResultsController.performFetch()
+            accounts = fetchResultsController.fetchedObjects! //FIXME: - Bang
+        } catch {
+            NSLog("\(error.localizedDescription)")
+        }
+        
+    }
+    
+    func saveToPersistentStore() {
+        
+        let moc = CoreDataStack.context
+        
+        do {
+            try moc.save()
+        } catch {
+            NSLog("Error saving \(error.localizedDescription)")
+        }
+        
+    }
+    
     //MARK: - Creator Methods
     
     func createAccount(nickName: String, ethOSaddress: String) {
         
         let account = Account(nickName: nickName, ethOSaddress: ethOSaddress, accountURL: createURL(ethOSaddress: ethOSaddress))
         self.accounts.append(account)
+        saveToPersistentStore()
         NotificationCenter.default.post(name: .refreshTableView, object: nil)
     }
     
@@ -31,6 +66,10 @@ class AccountController {
         guard let url = baseURL else { NSLog("baseURL was nil"); return URL(string: "http://3df0c9.ethosdistro.com/")! }
         
         return url
+    }
+    
+    func fetchFromCoreData() {
+        
     }
     
     //MARK: - Fetch / GET Method
