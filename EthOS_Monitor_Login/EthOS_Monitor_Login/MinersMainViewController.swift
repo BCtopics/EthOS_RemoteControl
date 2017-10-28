@@ -17,6 +17,12 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionData), name: .refreshCollectionView, object: nil)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        MinerController.shared.miners = []
+    }
+    
     var account: Account?
     
     func fetchInfo() {
