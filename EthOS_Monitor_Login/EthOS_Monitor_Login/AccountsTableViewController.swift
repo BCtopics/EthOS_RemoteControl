@@ -9,25 +9,30 @@
 import UIKit
 import CoreData
 
-class AccountsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class AccountsTableViewController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .refreshTableView, object: nil)
         AccountController.shared.fetchResultsController.delegate = self
+        
+        self.areAccountsThere()
     }
-
+    
+    
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let section = AccountController.shared.fetchResultsController.fetchedObjects?.count else { return 0 }
         
         return section
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "accountsCell", for: indexPath) as? AccountsTableViewCell else { NSLog("AccountsTableViewCell Was Nil"); return UITableViewCell() }
         
         let account = AccountController.shared.fetchResultsController.object(at: indexPath)
@@ -46,6 +51,10 @@ class AccountsTableViewController: UITableViewController, NSFetchedResultsContro
     @objc func reloadTableData() {
         self.tableView.reloadData()
     }
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: - IBActions
     
@@ -78,7 +87,7 @@ class AccountsTableViewController: UITableViewController, NSFetchedResultsContro
         self.present(alert, animated: true)
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let account = AccountController.shared.accounts[indexPath.row]
 //        AccountController.fetchMinersFromAccount(account: account) { (accountInfo) in
 //            print(accountInfo.totalHashrate)//FIXME: - Obvious
@@ -86,7 +95,7 @@ class AccountsTableViewController: UITableViewController, NSFetchedResultsContro
         
     }
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             
@@ -128,5 +137,12 @@ class AccountsTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
+    //MARK: - Colors / Design
+    
+    func areAccountsThere() {
+        if AccountController.shared.fetchResultsController.fetchedObjects?.count == 0 {
+            self.tableView.isHidden = true
+        }
+    }
 
 }

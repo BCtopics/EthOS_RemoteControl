@@ -1,67 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zkq-mD-Qo9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sUD-ri-m2A">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Accounts-->
-        <scene sceneID="nPw-qo-7fD">
+        <!--EthOS Accounts-->
+        <scene sceneID="ab2-g0-djD">
             <objects>
-                <tableViewController id="GQw-kG-9xg" customClass="AccountsTableViewController" customModule="EthOS_Monitor_Login" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="2o0-17-7rI">
+                <viewController id="ZfO-Hx-9e7" customClass="AccountsTableViewController" customModule="EthOS_Monitor_Login" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yfK-UH-g1I"/>
+                        <viewControllerLayoutGuide type="bottom" id="NPx-Dy-Yqk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hhS-8M-eHK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountsCell" rowHeight="60" id="dz8-dX-w3e" customClass="AccountsTableViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dz8-dX-w3e" id="Ldo-Mx-I9K">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHK-Ov-AFE">
-                                            <rect key="frame" x="9.5" y="6" width="356" height="48"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="width" secondItem="Ldo-Mx-I9K" secondAttribute="width" multiplier="0.95" id="3Ef-e9-WxE"/>
-                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="centerX" secondItem="Ldo-Mx-I9K" secondAttribute="centerX" id="4i9-7Y-Ygz"/>
-                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="height" secondItem="Ldo-Mx-I9K" secondAttribute="height" multiplier="0.8" id="63z-mf-Qz0"/>
-                                        <constraint firstItem="SHK-Ov-AFE" firstAttribute="centerY" secondItem="Ldo-Mx-I9K" secondAttribute="centerY" id="oMA-B3-ITC"/>
-                                    </constraints>
-                                </tableViewCellContentView>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jY-O2-hcH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add A New Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc0-xs-cOr">
+                                        <rect key="frame" x="166" y="291" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="lc0-xs-cOr" firstAttribute="leading" secondItem="2jY-O2-hcH" secondAttribute="leading" constant="166" id="BVF-7N-dI2"/>
+                                    <constraint firstItem="lc0-xs-cOr" firstAttribute="top" secondItem="2jY-O2-hcH" secondAttribute="top" constant="291" id="NPO-0G-2Tw"/>
+                                    <constraint firstAttribute="trailing" secondItem="lc0-xs-cOr" secondAttribute="trailing" constant="167" id="PlX-GH-Q69"/>
+                                    <constraint firstAttribute="bottom" secondItem="lc0-xs-cOr" secondAttribute="bottom" constant="291" id="xyG-Ee-RSE"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vCF-Gg-tJb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="accountsCell" rowHeight="60" id="sPV-kU-aca" customClass="AccountsTableViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sPV-kU-aca" id="KVj-6J-bdG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3M-du-Wv4">
+                                                    <rect key="frame" x="9.5" y="6" width="356" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="h3M-du-Wv4" firstAttribute="width" secondItem="KVj-6J-bdG" secondAttribute="width" multiplier="0.95" id="5g5-Kr-Dl2"/>
+                                                <constraint firstItem="h3M-du-Wv4" firstAttribute="height" secondItem="KVj-6J-bdG" secondAttribute="height" multiplier="0.8" id="NRd-zk-xco"/>
+                                                <constraint firstItem="h3M-du-Wv4" firstAttribute="centerX" secondItem="KVj-6J-bdG" secondAttribute="centerX" id="dUi-Gd-b04"/>
+                                                <constraint firstItem="h3M-du-Wv4" firstAttribute="centerY" secondItem="KVj-6J-bdG" secondAttribute="centerY" id="tMA-PE-bKB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="accountNameLabel" destination="h3M-du-Wv4" id="Cjh-w7-uFw"/>
+                                            <segue destination="rQd-jz-ce1" kind="show" identifier="toMinersMain" id="hbc-QL-Fzj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <outlet property="accountNameLabel" destination="SHK-Ov-AFE" id="f93-CM-xk6"/>
-                                    <segue destination="rQd-jz-ce1" kind="show" identifier="toMinersMain" id="SLh-pT-b7G"/>
+                                    <outlet property="dataSource" destination="ZfO-Hx-9e7" id="LgI-dw-DfV"/>
+                                    <outlet property="delegate" destination="ZfO-Hx-9e7" id="2nl-Fq-uie"/>
+                                    <outlet property="prefetchDataSource" destination="ZfO-Hx-9e7" id="PfS-BA-NDq"/>
                                 </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="GQw-kG-9xg" id="8nl-cE-I86"/>
-                            <outlet property="delegate" destination="GQw-kG-9xg" id="9ho-HX-ZvL"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Accounts" id="myj-l6-KAc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NGj-Zu-dtm">
-                            <connections>
-                                <action selector="AddButtonTapped:" destination="GQw-kG-9xg" id="Ew7-gG-ttC"/>
-                            </connections>
-                        </barButtonItem>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vCF-Gg-tJb" firstAttribute="leading" secondItem="hhS-8M-eHK" secondAttribute="leading" id="00b-iQ-SvA"/>
+                            <constraint firstItem="vCF-Gg-tJb" firstAttribute="top" secondItem="yfK-UH-g1I" secondAttribute="bottom" id="IGL-wK-Tw8"/>
+                            <constraint firstItem="2jY-O2-hcH" firstAttribute="top" secondItem="yfK-UH-g1I" secondAttribute="bottom" id="MSR-RY-nfY"/>
+                            <constraint firstAttribute="trailing" secondItem="vCF-Gg-tJb" secondAttribute="trailing" id="PhD-Lu-Eey"/>
+                            <constraint firstItem="NPx-Dy-Yqk" firstAttribute="top" secondItem="2jY-O2-hcH" secondAttribute="bottom" id="S3y-bx-ifw"/>
+                            <constraint firstItem="2jY-O2-hcH" firstAttribute="leading" secondItem="hhS-8M-eHK" secondAttribute="leading" id="ZZ4-Ml-mAr"/>
+                            <constraint firstItem="NPx-Dy-Yqk" firstAttribute="top" secondItem="vCF-Gg-tJb" secondAttribute="bottom" id="diu-2K-w6M"/>
+                            <constraint firstAttribute="trailing" secondItem="2jY-O2-hcH" secondAttribute="trailing" id="jQO-Lf-ee9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="EthOS Accounts" id="sXj-TP-dxB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="c9v-3a-yeP"/>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qrA-yE-XZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="tableView" destination="vCF-Gg-tJb" id="lMk-Lf-F9N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CKD-q7-ftE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152.8" y="114.69265367316342"/>
+            <point key="canvasLocation" x="1152.8" y="-568.06596701649175"/>
         </scene>
         <!--MinersMainView-->
         <scene sceneID="YE6-cE-IJr">
@@ -69,25 +106,25 @@
                 <viewControllerPlaceholder storyboardName="MinersMainView" id="rQd-jz-ce1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kg-Dl-rIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2102" y="114"/>
+            <point key="canvasLocation" x="2343" y="-569"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Zu7-y4-bnZ">
+        <scene sceneID="Hzx-00-38k">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zkq-mD-Qo9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sUD-ri-m2A" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Muo-dz-BCd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lzU-24-4xO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="GQw-kG-9xg" kind="relationship" relationship="rootViewController" id="R5s-vH-1P0"/>
+                        <segue destination="ZfO-Hx-9e7" kind="relationship" relationship="rootViewController" id="H2f-2W-MAR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xX4-cz-Zev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fah-OB-3po" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="115"/>
+            <point key="canvasLocation" x="436" y="-568"/>
         </scene>
     </scenes>
 </document>
