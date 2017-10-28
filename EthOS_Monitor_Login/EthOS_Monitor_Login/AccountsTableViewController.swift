@@ -20,6 +20,7 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
         AccountController.shared.fetchResultsController.delegate = self
         
         self.areAccountsThere()
+        self.addColors()
     }
     
     
@@ -50,6 +51,7 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
     
     @objc func reloadTableData() {
         self.tableView.reloadData()
+        self.areAccountsThere()
     }
     
     //MARK: - IBOutlets
@@ -142,7 +144,14 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
     func areAccountsThere() {
         if AccountController.shared.fetchResultsController.fetchedObjects?.count == 0 {
             self.tableView.isHidden = true
+        } else {
+            self.tableView.isHidden = false
         }
+    }
+    
+    func addColors() {
+        self.navigationController?.navigationBar.barTintColor = UIColor.backgroundDarkerGreen
+        self.tableView.backgroundColor = UIColor.backgroundGray
     }
 
 }

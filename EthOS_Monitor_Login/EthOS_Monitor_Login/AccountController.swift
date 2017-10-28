@@ -20,6 +20,7 @@ class AccountController {
     var fetchResultsController: NSFetchedResultsController<Account>
     
     init() {
+        
         let request: NSFetchRequest<Account> = Account.fetchRequest()
         
         let sort = NSSortDescriptor(key: "ethOSaddress", ascending: true)
@@ -33,7 +34,14 @@ class AccountController {
         } catch {
             NSLog("\(error.localizedDescription)")
         }
-        
+    }
+    
+    func fetchResults() {
+        do {
+            try fetchResultsController.performFetch()
+        } catch {
+            NSLog("\(error.localizedDescription)")
+        }
     }
     
     func saveToPersistentStore() {
@@ -42,6 +50,7 @@ class AccountController {
         
         do {
             try moc.save()
+            fetchResults()
             NotificationCenter.default.post(name: .refreshTableView, object: nil)
         } catch {
             NSLog("Error saving \(error.localizedDescription)")
