@@ -54,6 +54,7 @@
 /* Begin PBXFileReference section */
 		6B14DC971F6C4E7C00718120 /* MinerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinerCollectionViewCell.swift; sourceTree = "<group>"; };
 		6B14DC991F6C503900718120 /* MinerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinerController.swift; sourceTree = "<group>"; };
+		6B1788BC1FA643600055BF27 /* EthOS_Monitor_Login.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EthOS_Monitor_Login.entitlements; sourceTree = "<group>"; };
 		6B2D73761F8C4D34002A2E1A /* CommandViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommandViewController.storyboard; sourceTree = "<group>"; };
 		6B2D737A1F8C4D69002A2E1A /* CommandsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsViewController.swift; sourceTree = "<group>"; };
 		6B3986171F8C1FD400229B06 /* MinerDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MinerDetailView.storyboard; sourceTree = "<group>"; };
@@ -95,6 +96,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B1788BD1FA643640055BF27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B2D73751F8C4D22002A2E1A /* CommandViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +127,7 @@
 				6B4BF92C1F6B5334001DDC8C /* NMSSH.framework */,
 				6B4BF9121F6B526B001DDC8C /* EthOS_Monitor_Login */,
 				6B4BF9111F6B526B001DDC8C /* Products */,
+				6B1788BD1FA643640055BF27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +142,7 @@
 		6B4BF9121F6B526B001DDC8C /* EthOS_Monitor_Login */ = {
 			isa = PBXGroup;
 			children = (
+				6B1788BC1FA643600055BF27 /* EthOS_Monitor_Login.entitlements */,
 				6B4BF9131F6B526B001DDC8C /* AppDelegate.swift */,
 				6BAE4DFB1FA45B3800DC103A /* Appearance */,
 				6B8E3EC41F8E995B00E3DAC1 /* CoreData */,
@@ -286,6 +296,14 @@
 						DevelopmentTeam = N8EMAYLL43;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -482,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EthOS_Monitor_Login/EthOS_Monitor_Login.entitlements;
 				DEVELOPMENT_TEAM = N8EMAYLL43;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EthOS_Monitor_Login/EthOS_Monitor_Login.entitlements;
 				DEVELOPMENT_TEAM = N8EMAYLL43;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

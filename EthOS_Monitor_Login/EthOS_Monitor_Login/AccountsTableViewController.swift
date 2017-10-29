@@ -103,8 +103,6 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            
-            
             let account = AccountController.shared.fetchResultsController.object(at: indexPath)
             AccountController.shared.remove(account: account)
         }
