@@ -97,6 +97,7 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         cell.rigName.text = miner.rigName
         cell.totalHashrate.text = miner.totalHashrate //FIXME: - Make this actually total hashrate
         cell.ipaddresslabel.text = miner.ipaddress
+        cell.instancesLabel.text = "\(miner.minerInstance)/\(miner.GPUSAlive)"
 
         return cell
     }

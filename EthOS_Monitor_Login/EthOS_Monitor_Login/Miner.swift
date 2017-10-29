@@ -15,6 +15,8 @@ class Miner {
     var totalHashrate: String
     let ipaddress: String
     var rigName: String
+    var minerInstance: Int
+    var GPUSAlive: String
 
     //MARK: - Initilizers
     
@@ -23,7 +25,11 @@ class Miner {
         guard let totalHashrate = dictionary[Keys.kMinerHash] as? String else { NSLog("Total Hashrate is Nil"); return nil }
         guard let rigName = "Name of rig" as? String else { NSLog("rigname is Nil"); return nil }
         guard let ipaddress = dictionary[Keys.kIP] as? String else { NSLog("ip is Nil"); return nil }
+        guard let minerInstance = dictionary[Keys.kMinerInstance] as? Int else { NSLog("minerInstances is nil"); return nil }
+        guard let GPUSAlive = dictionary[Keys.kGPUS] as? String else { NSLog("GPUSAlive is nil"); return nil }
         
+        self.GPUSAlive = GPUSAlive
+        self.minerInstance = minerInstance
         self.totalHashrate = totalHashrate
         self.rigName = rigName
         self.ipaddress = ipaddress

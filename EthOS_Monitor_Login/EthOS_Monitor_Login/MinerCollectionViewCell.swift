@@ -16,6 +16,7 @@ class MinerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var totalHashrate: UILabel!
     @IBOutlet weak var ipaddresslabel: UILabel!
     @IBOutlet weak var connectButton: UIButton!
+    @IBOutlet weak var instancesLabel: UILabel!
     
     @IBAction func connectButtonTapped(_ sender: Any) {
         

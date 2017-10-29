@@ -53,17 +53,17 @@
                                 <rect key="frame" x="0.0" y="152" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uA9-p5-boN">
-                                    <size key="itemSize" width="369" height="67"/>
+                                    <size key="itemSize" width="369" height="99"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="minerCell" id="Ca3-XK-es7" customClass="MinerCollectionViewCell" customModule="EthOS_Monitor_Login" customModuleProvider="target">
-                                        <rect key="frame" x="3" y="0.0" width="369" height="67"/>
+                                        <rect key="frame" x="3" y="0.0" width="369" height="99"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="369" height="67"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="369" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mbm-ya-XF6">
@@ -83,14 +83,29 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total hashrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-3n-3me">
-                                                    <rect key="frame" x="255.5" y="5" width="108.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nU1-5q-m7a">
+                                                    <rect key="frame" x="255.5" y="5" width="108.5" height="45.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total hashrate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-3n-3me">
+                                                            <rect key="frame" x="0.0" y="0.0" width="108.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instances" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFp-Ca-nDZ">
+                                                            <rect key="frame" x="0.0" y="24.5" width="108.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="iFp-Ca-nDZ" firstAttribute="width" secondItem="bfz-3n-3me" secondAttribute="width" id="LqI-MM-wTA"/>
+                                                        <constraint firstItem="iFp-Ca-nDZ" firstAttribute="height" secondItem="bfz-3n-3me" secondAttribute="height" id="hc5-kp-AFs"/>
+                                                    </constraints>
+                                                </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wc1-av-94M">
-                                                    <rect key="frame" x="305" y="29.5" width="59" height="30"/>
+                                                    <rect key="frame" x="155" y="64" width="59" height="30"/>
                                                     <state key="normal" title="Connect"/>
                                                     <connections>
                                                         <action selector="connectButtonTapped:" destination="Ca3-XK-es7" eventType="touchUpInside" id="eAN-24-Zr5"/>
@@ -99,15 +114,16 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="bfz-3n-3me" firstAttribute="top" secondItem="Ca3-XK-es7" secondAttribute="top" constant="5" id="0cV-1Z-XKZ"/>
                                             <constraint firstItem="mbm-ya-XF6" firstAttribute="leading" secondItem="Ca3-XK-es7" secondAttribute="leading" constant="5" id="2Vv-d6-Zyd"/>
-                                            <constraint firstAttribute="trailing" secondItem="bfz-3n-3me" secondAttribute="trailing" constant="5" id="AHK-hC-BZR"/>
+                                            <constraint firstItem="nU1-5q-m7a" firstAttribute="top" secondItem="Ca3-XK-es7" secondAttribute="top" constant="5" id="FJd-fn-Zl4"/>
                                             <constraint firstItem="mbm-ya-XF6" firstAttribute="top" secondItem="Ca3-XK-es7" secondAttribute="top" constant="5" id="JEi-aW-u3I"/>
-                                            <constraint firstItem="wc1-av-94M" firstAttribute="top" secondItem="bfz-3n-3me" secondAttribute="bottom" constant="4" id="JSl-Qt-3tX"/>
-                                            <constraint firstAttribute="trailing" secondItem="wc1-av-94M" secondAttribute="trailing" constant="5" id="VNm-oj-xao"/>
+                                            <constraint firstAttribute="trailing" secondItem="nU1-5q-m7a" secondAttribute="trailing" constant="5" id="cEU-ux-ZN5"/>
+                                            <constraint firstAttribute="bottom" secondItem="wc1-av-94M" secondAttribute="bottom" constant="5" id="o9v-C4-Cvf"/>
+                                            <constraint firstItem="wc1-av-94M" firstAttribute="centerX" secondItem="Ca3-XK-es7" secondAttribute="centerX" id="w1w-Bt-Sag"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="connectButton" destination="wc1-av-94M" id="RCo-bj-u3L"/>
+                                            <outlet property="instancesLabel" destination="iFp-Ca-nDZ" id="J5G-Zs-GwU"/>
                                             <outlet property="ipaddresslabel" destination="kPB-NN-nsp" id="sq7-dv-SCC"/>
                                             <outlet property="rigName" destination="4fG-Aq-3EC" id="fMb-tV-gdY"/>
                                             <outlet property="totalHashrate" destination="bfz-3n-3me" id="zGA-vV-WHc"/>
