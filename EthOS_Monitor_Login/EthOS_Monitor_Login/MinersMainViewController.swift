@@ -139,8 +139,18 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         //NOTES: - I believe this was to click on for more information?
     }
     
+    //MARK: - Segue Delegate
+    
     func performSegue() {
         self.performSegue(withIdentifier: "commandSegue", sender: self)
+    }
+    
+    func showNoConnection() {
+        let alert = UIAlertController(title: "No Connection", message: "There has been an errror connecting, please make sure your on the same network as your miners and try again", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     //MARK: - IBOutlets

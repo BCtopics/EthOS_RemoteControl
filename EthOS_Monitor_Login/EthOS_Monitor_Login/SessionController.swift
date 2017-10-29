@@ -25,7 +25,7 @@ class SessionController: NSObject, NMSSHChannelDelegate {
         self.session = NMSSHSession(host: ip, andUsername: "ethos")!
         guard let session = session else { NSLog("Session is Nil"); return }
         session.connect()
-        if session.isConnected == true{
+        if session.isConnected == true {
             session.authenticate(byPassword: "live")
             if session.isAuthorized == true {
                 print("works")
@@ -43,6 +43,8 @@ class SessionController: NSObject, NMSSHChannelDelegate {
                     self.sendCommand(command: " ")
                 })
             }
+        } else if session.isConnected == false {
+            segueDelegate?.showNoConnection()
         }
     }
     
@@ -78,6 +80,7 @@ class SessionController: NSObject, NMSSHChannelDelegate {
 
 protocol segueDelegate: class {
     func performSegue()
+    func showNoConnection()
 }
 
 protocol CommandsViewControllerDelegate: class {
