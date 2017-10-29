@@ -36,7 +36,6 @@ class SessionController: NSObject, NMSSHChannelDelegate {
                 channel.requestPty = true
                 
                 try? channel.startShell()
-                segueDelegate?.performSegue()
                 
                 Timer.scheduledTimer(withTimeInterval: 15.0, repeats: false, block: { (_) in
                     
@@ -61,7 +60,12 @@ class SessionController: NSObject, NMSSHChannelDelegate {
     func channel(_ channel: NMSSHChannel!, didReadData message: String!) {
         print("Reading Data: \(message!)")
         delegate?.updateViews(message: message)
-        
+        if message.contains("Welcome to ethOS") {
+            DispatchQueue.main.async {
+                
+                self.segueDelegate?.performSegue()
+            }
+        }
     }
     
     func channel(_ channel: NMSSHChannel!, didReadRawError error: Data!) {
