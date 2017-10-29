@@ -16,6 +16,7 @@ class SessionController: NSObject, NMSSHChannelDelegate {
     var session: NMSSHSession?
     var channel: NMSSHChannel?
     weak var delegate:CommandsViewController?
+    weak var segueDelegate:MinersMainViewController?
     
     //MARK: - Connection Start / End
     
@@ -35,6 +36,7 @@ class SessionController: NSObject, NMSSHChannelDelegate {
                 channel.requestPty = true
                 
                 try? channel.startShell()
+                segueDelegate?.performSegue()
                 
                 Timer.scheduledTimer(withTimeInterval: 15.0, repeats: false, block: { (_) in
                     
@@ -72,6 +74,10 @@ class SessionController: NSObject, NMSSHChannelDelegate {
         print("Shell Did Close Called")
     }
     
+}
+
+protocol segueDelegate: class {
+    func performSegue()
 }
 
 protocol CommandsViewControllerDelegate: class {

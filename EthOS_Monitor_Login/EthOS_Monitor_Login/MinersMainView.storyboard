@@ -4,8 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -95,7 +94,6 @@
                                                     <state key="normal" title="Connect"/>
                                                     <connections>
                                                         <action selector="connectButtonTapped:" destination="Ca3-XK-es7" eventType="touchUpInside" id="eAN-24-Zr5"/>
-                                                        <segue destination="UXU-OE-gcf" kind="show" id="LaH-NV-Jnx"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -142,6 +140,7 @@
                         <outlet property="totalGPUSLabel" destination="1FD-uY-X4d" id="C5J-uv-1e2"/>
                         <outlet property="totalHashRate" destination="DYb-Kn-a4o" id="WrC-my-ruT"/>
                         <outlet property="totalRigsLabel" destination="CJf-A3-nSn" id="WaJ-jN-ovu"/>
+                        <segue destination="UXU-OE-gcf" kind="show" identifier="commandSegue" id="8ma-Kc-vNV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEk-1B-YHG" userLabel="First Responder" sceneMemberID="firstResponder"/>

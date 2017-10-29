@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, segueDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.fetchInfo()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionData), name: .refreshCollectionView, object: nil)
+        SessionController.shared.segueDelegate = self
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -138,6 +139,9 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         //NOTES: - I believe this was to click on for more information?
     }
     
+    func performSegue() {
+        self.performSegue(withIdentifier: "commandSegue", sender: self)
+    }
     
     //MARK: - IBOutlets
     
