@@ -98,6 +98,12 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         cell.totalHashrate.text = miner.totalHashrate //FIXME: - Make this actually total hashrate
         cell.ipaddresslabel.text = miner.ipaddress
         cell.instancesLabel.text = "\(miner.minerInstance)/\(miner.GPUSAlive)"
+        
+        if Int(miner.minerInstance) != Int(miner.GPUSAlive) {
+            cell.instancesLabel.textColor = .red
+        } else {
+            cell.instancesLabel.textColor = .green
+        }
 
         return cell
     }
