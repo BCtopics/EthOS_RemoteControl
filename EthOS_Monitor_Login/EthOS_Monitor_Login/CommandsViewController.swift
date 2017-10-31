@@ -10,6 +10,8 @@ import UIKit
 
 class CommandsViewController: UIViewController, CommandsViewControllerDelegate {
     
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +44,6 @@ class CommandsViewController: UIViewController, CommandsViewControllerDelegate {
             self.simpleCommandLineLabel.isHidden = true
             // Add More Stuff Here
         }
-        
     }
     
     //MARK: - Updates
@@ -96,6 +97,5 @@ class CommandsViewController: UIViewController, CommandsViewControllerDelegate {
         self.simple = !self.simple
         simpleOrAdvanced()
     }
-    
 }
 
