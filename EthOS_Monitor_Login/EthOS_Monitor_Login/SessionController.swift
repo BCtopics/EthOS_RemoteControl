@@ -47,6 +47,10 @@ class SessionController: NSObject, NMSSHChannelDelegate {
         }
     }
     
+    func endConnection() {
+        self.session = nil
+    }
+    
     //MARK: - Send Commands
     
     func sendCommand(command: String) {

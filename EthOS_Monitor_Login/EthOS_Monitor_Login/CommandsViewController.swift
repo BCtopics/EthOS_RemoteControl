@@ -16,6 +16,12 @@ class CommandsViewController: UIViewController, CommandsViewControllerDelegate {
         SessionController.shared.delegate = self
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        SessionController.shared.endConnection()
+        NSLog("Ending Connection")
+    }
+    
     //MARK: - Properties
     
     static let shared = CommandsViewController()
