@@ -295,7 +295,7 @@
 					6B4BF90F1F6B526B001DDC8C = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = N8EMAYLL43;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -313,6 +313,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -528,7 +529,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bradleygilmore.EthOS-Monitor-Login";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -547,7 +548,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bradleygilmore.EthOS-Monitor-Login";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

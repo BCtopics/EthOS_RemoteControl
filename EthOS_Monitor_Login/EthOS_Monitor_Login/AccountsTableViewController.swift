@@ -100,7 +100,7 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
         
     }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             let account = AccountController.shared.fetchResultsController.object(at: indexPath)
