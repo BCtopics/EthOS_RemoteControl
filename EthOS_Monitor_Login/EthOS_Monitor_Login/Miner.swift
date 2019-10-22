@@ -55,12 +55,12 @@ class Miner {
         var hashString = ""
         var counter = 1
         
-        for i in hashes2.characters {
+        for i in hashes2 {
             if i == " " {
                 hashArray.append(Double(hashString)!)
                 hashString = ""
                 counter += 1
-            } else if hashes2.characters.count == counter {
+            } else if hashes2.count == counter {
                 hashArray.append(Double(hashString)!)
                 hashString = ""
             } else {
