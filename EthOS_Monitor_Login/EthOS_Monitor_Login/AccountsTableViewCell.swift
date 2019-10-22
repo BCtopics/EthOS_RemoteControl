@@ -10,6 +10,8 @@ import UIKit
 
 class AccountsTableViewCell: UITableViewCell {
 
+    //MARK: - LifeCycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

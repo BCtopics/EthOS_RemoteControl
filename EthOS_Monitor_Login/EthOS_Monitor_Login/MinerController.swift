@@ -18,11 +18,11 @@ class MinerController {
     
     func createMiners(dictionary: [String: Any]) {
         
-        for (key, value) in dictionary {
+        for (key, _) in dictionary {
             
             let minerInfo = dictionary[key] as? [String: Any]
             
-            guard var newMiner = Miner(dictionary: minerInfo!) else { NSLog("Miner Is Nil during Creation"); return }
+            guard let newMiner = Miner(dictionary: minerInfo!) else { NSLog("Miner Is Nil during Creation"); return }
             newMiner.rigName = key
             print("\(newMiner.rigName) is being appended now")
             self.miners.append(newMiner)

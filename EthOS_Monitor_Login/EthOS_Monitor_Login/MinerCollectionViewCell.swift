@@ -18,6 +18,8 @@ class MinerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var instancesLabel: UILabel!
     
+    //MARK: IBActions
+    
     @IBAction func connectButtonTapped(_ sender: Any) {
         
         guard let ipAddress = ipaddresslabel.text else { NSLog("IPAddress Is Nil, MinerCollectionViewCell"); return }
