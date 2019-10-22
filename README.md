@@ -20,5 +20,6 @@ An iOS app that will allow you to remotely send commands to your EthOS Miners on
 - [X] SSH into a specific miner
 - [X] Send prebuilt commands to a specific miner through SSH connection
 - [X] View terminal windows / desktop of a specific miner
+- [ ] Get very detailed information for a specific mining rig
 - [ ] Send custom commands to a specific miner through SSH connection
 - [ ] Change design to look "Pretty"
