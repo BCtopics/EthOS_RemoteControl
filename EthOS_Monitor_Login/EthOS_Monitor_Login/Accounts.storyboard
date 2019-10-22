@@ -105,7 +105,9 @@
         <!--MinersMainView-->
         <scene sceneID="YE6-cE-IJr">
             <objects>
-                <viewControllerPlaceholder storyboardName="MinersMainView" id="rQd-jz-ce1" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MinersMainView" id="rQd-jz-ce1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iK9-Rh-aGv"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kg-Dl-rIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2343" y="-569"/>
