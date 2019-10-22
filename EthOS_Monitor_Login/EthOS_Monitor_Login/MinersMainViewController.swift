@@ -16,6 +16,8 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         self.fetchInfo()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionData), name: .refreshCollectionView, object: nil)
         SessionController.shared.segueDelegate = self
+        
+        addColors()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -167,5 +169,17 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var totalRigsLabel: UILabel!
     @IBOutlet weak var averageTemp: UILabel!
     @IBOutlet weak var minersCollectionView: UICollectionView!
+    
+}
+
+//MARK: - Helpers
+
+extension MinersMainViewController {
+    
+    func addColors() { //TODO: - I Don't really know what color to pick?
+        self.navigationController?.navigationBar.barTintColor = UIColor.backgroundDarkerGreen
+        self.minersCollectionView.backgroundColor = UIColor.backgroundTintGreen
+        self.view.backgroundColor = UIColor.backgroundTintGreen
+    }
     
 }
