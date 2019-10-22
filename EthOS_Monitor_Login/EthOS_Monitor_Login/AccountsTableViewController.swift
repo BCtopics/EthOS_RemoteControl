@@ -70,11 +70,11 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
         let alert = UIAlertController(title: "EthOS Account", message: "Please enter EthOS Information", preferredStyle: .alert)
         
         alert.addTextField { (nickname) in
-            nickname.placeholder = "nickName"
+            nickname.placeholder = "nickname"
         }
         
         alert.addTextField { (username) in
-            username.placeholder = "ethOS Distro Charactes"
+            username.placeholder = "ethOS Distro Characters"
         }
 
         //FIXME: - Fix Naming
