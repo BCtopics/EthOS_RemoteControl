@@ -85,7 +85,9 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
             
             // Make sure there's something in the required ethOSCharacters field
             if ethOSDistroCharacters.isEmpty {
-                //FIXME: - Alert saying you need something in that field
+                let errorAlert = self.showAlertController(title: "Error", body: "EthOS Distro Characters Text Field can't be empty")
+                self.present(errorAlert, animated: true)
+                return
             }
             
             AccountController.shared.createAccount(nickName: nickName, ethOSaddress: ethOSDistroCharacters)
@@ -162,4 +164,24 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
         self.noAccountsView.backgroundColor = UIColor.backgroundTintGreen
     }
 
+}
+
+//MARK: - Helpers
+
+extension AccountsTableViewController {
+    
+    func showAlertController(title: String, body: String) -> UIAlertController {
+        // Create UIAlertController with the given title, and body text.
+        let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        
+        // Add an action that reads OK and will get rid of the UIAlertController
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        // Add that action to the UIAlertController
+        alert.addAction(okAction)
+        
+        // Return the UIAlertController
+        return alert
+    }
+    
 }
