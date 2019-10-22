@@ -67,7 +67,7 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
     
     @IBAction func AddButtonTapped(_ sender: Any) {
         
-        let alert = UIAlertController(title: "EthOS Account", message: "Please enter EthOS Information", preferredStyle: .alert)
+        let alert = UIAlertController(title: "EthOS Account", message: "Please enter you're EthOS Information", preferredStyle: .alert)
         
         alert.addTextField { (nickname) in
             nickname.placeholder = "nickname"
@@ -77,10 +77,16 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
             username.placeholder = "ethOS Distro Characters"
         }
 
-        //FIXME: - Fix Naming
         let createAction = UIAlertAction(title: "Create", style: .default) { (_) in
+            
+            // Get the values out of the textField
             guard let nickName = alert.textFields?[0].text else { return }
             guard let ethOSDistroCharacters = alert.textFields?[1].text else { return }
+            
+            // Make sure there's something in the required ethOSCharacters field
+            if ethOSDistroCharacters.isEmpty {
+                //FIXME: - Alert saying you need something in that field
+            }
             
             AccountController.shared.createAccount(nickName: nickName, ethOSaddress: ethOSDistroCharacters)
         }
