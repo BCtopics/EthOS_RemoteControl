@@ -10,6 +10,11 @@ import UIKit
 import CoreData
 
 class AccountsTableViewController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noAccountsView: UIView!
 
     //MARK: - LifeCycle
     
@@ -49,38 +54,47 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            let account = AccountController.shared.fetchResultsController.object(at: indexPath)
+            AccountController.shared.remove(account: account)
+        }
+    }
+    
     //MARK: - Refreshing
     
     @objc func reloadTableData() {
         self.tableView.reloadData()
         self.areAccountsThere()
     }
-    
-    //MARK: - IBOutlets
-    
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var noAccountsView: UIView!
-    
+
     //MARK: - IBActions
-    
-    // Add Button
-    
+
     @IBAction func AddButtonTapped(_ sender: Any) {
         
-        let alert = UIAlertController(title: "EthOS Account", message: "Please enter EthOS Information", preferredStyle: .alert)
+        let alert = UIAlertController(title: "EthOS Account", message: "Please enter you're EthOS Information", preferredStyle: .alert)
         
         alert.addTextField { (nickname) in
-            nickname.placeholder = "nickName"
+            nickname.placeholder = "nickname"
         }
         
         alert.addTextField { (username) in
-            username.placeholder = "ethOS Distro Charactes"
+            username.placeholder = "ethOS Distro Characters"
         }
 
-        //FIXME: - Fix Naming
         let createAction = UIAlertAction(title: "Create", style: .default) { (_) in
+            
+            // Get the values out of the textField
             guard let nickName = alert.textFields?[0].text else { return }
             guard let ethOSDistroCharacters = alert.textFields?[1].text else { return }
+            
+            // Make sure there's something in the required ethOSCharacters field
+            if ethOSDistroCharacters.isEmpty {
+                let errorAlert = self.showAlertController(title: "Error", body: "EthOS Distro Characters Text Field can't be empty")
+                self.present(errorAlert, animated: true)
+                return
+            }
             
             AccountController.shared.createAccount(nickName: nickName, ethOSaddress: ethOSDistroCharacters)
         }
@@ -92,42 +106,8 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
         self.present(alert, animated: true)
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let account = AccountController.shared.accounts[indexPath.row]
-//        AccountController.fetchMinersFromAccount(account: account) { (accountInfo) in
-//            print(accountInfo.totalHashrate)//FIXME: - Obvious
-//        }
-        
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            let account = AccountController.shared.fetchResultsController.object(at: indexPath)
-            AccountController.shared.remove(account: account)
-        }
-    }
-    
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "toMinersMain" {
@@ -139,8 +119,30 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
             }
         }
     }
+
+}
+
+//MARK: - Helpers
+
+extension AccountsTableViewController {
     
-    //MARK: - Colors / Design
+    // Alerts
+    
+    func showAlertController(title: String, body: String) -> UIAlertController {
+        // Create UIAlertController with the given title, and body text.
+        let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
+        
+        // Add an action that reads OK and will get rid of the UIAlertController
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        // Add that action to the UIAlertController
+        alert.addAction(okAction)
+        
+        // Return the UIAlertController
+        return alert
+    }
+    
+    // Colors / Design
     
     func areAccountsThere() {
         if AccountController.shared.fetchResultsController.fetchedObjects?.count == 0 {
@@ -150,10 +152,10 @@ class AccountsTableViewController: UIViewController, NSFetchedResultsControllerD
         }
     }
 
-    func addColors() { //FIXME: - I Don't really know what color to pick?
+    func addColors() { //TODO: - I Don't really know what color to pick?
         self.navigationController?.navigationBar.barTintColor = UIColor.backgroundDarkerGreen
         self.tableView.backgroundColor = UIColor.backgroundTintGreen
         self.noAccountsView.backgroundColor = UIColor.backgroundTintGreen
     }
-
+    
 }
