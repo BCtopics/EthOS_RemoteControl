@@ -16,6 +16,8 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
         self.fetchInfo()
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionData), name: .refreshCollectionView, object: nil)
         SessionController.shared.segueDelegate = self
+        
+        addColors()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -74,16 +76,12 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
     
     @objc func reloadCollectionData() {
         DispatchQueue.main.async {
-            
             self.minersCollectionView.reloadData()
         }
     }
     
-    // MARK: - Navigation
-    
     
     // MARK: UICollectionViewDataSource
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return MinerController.shared.miners.count
@@ -141,7 +139,7 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let item = collectionView.cellForItem(at: indexPath) as! MinerCollectionViewCell
+//        let item = collectionView.cellForItem(at: indexPath) as! MinerCollectionViewCell
         //FIXME: - What was I doing with this?
         //NOTES: - I believe this was to click on for more information?
     }
@@ -167,5 +165,19 @@ class MinersMainViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var totalRigsLabel: UILabel!
     @IBOutlet weak var averageTemp: UILabel!
     @IBOutlet weak var minersCollectionView: UICollectionView!
+    
+}
+
+//MARK: - Helpers
+
+extension MinersMainViewController {
+    
+    func addColors() { //TODO: - I Don't really know what color to pick?
+        self.navigationController?.navigationBar.barTintColor = UIColor.backgroundDarkerGreen
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = .black
+        self.minersCollectionView.backgroundColor = UIColor.backgroundTintGreen
+        self.view.backgroundColor = UIColor.backgroundTintGreen
+    }
     
 }

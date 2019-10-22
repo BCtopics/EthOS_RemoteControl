@@ -157,6 +157,8 @@ extension AccountsTableViewController {
     }
 
     func addColors() { //TODO: - I Don't really know what color to pick?
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = .black
         self.navigationController?.navigationBar.barTintColor = UIColor.backgroundDarkerGreen
         self.tableView.backgroundColor = UIColor.backgroundTintGreen
         self.noAccountsView.backgroundColor = UIColor.backgroundTintGreen

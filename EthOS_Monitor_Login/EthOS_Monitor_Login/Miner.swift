@@ -23,9 +23,9 @@ class Miner {
     init?(dictionary: [String: Any]) {
         
         guard let totalHashrate = dictionary[Keys.kMinerHash] as? String else { NSLog("Total Hashrate is Nil"); return nil }
-        guard let rigName = "Name of rig" as? String else { NSLog("rigname is Nil"); return nil }
         guard let ipaddress = dictionary[Keys.kIP] as? String else { NSLog("ip is Nil"); return nil }
         guard let GPUSAlive = dictionary[Keys.kGPUS] as? String else { NSLog("GPUSAlive is nil"); return nil }
+        let rigName = "Name of rig"
         if let minerInstance = dictionary[Keys.kMinerInstance] as? String {
             self.GPUSAlive = GPUSAlive
             self.minerInstance = minerInstance
