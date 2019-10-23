@@ -22,18 +22,18 @@ class Miner {
     
     init?(dictionary: [String: Any]) {
         
-        guard let totalHashrate = dictionary[Keys.kMinerHash] as? String else { NSLog("Total Hashrate is Nil"); return nil }
-        guard let ipaddress = dictionary[Keys.kIP] as? String else { NSLog("ip is Nil"); return nil }
-        guard let GPUSAlive = dictionary[Keys.kGPUS] as? String else { NSLog("GPUSAlive is nil"); return nil }
+        guard let totalHashrate = dictionary[Keys.kMinerHash.rawValue] as? String else { NSLog("Total Hashrate is Nil"); return nil }
+        guard let ipaddress = dictionary[Keys.kIP.rawValue] as? String else { NSLog("ip is Nil"); return nil }
+        guard let GPUSAlive = dictionary[Keys.kGPUS.rawValue] as? String else { NSLog("GPUSAlive is nil"); return nil }
         let rigName = "Name of rig"
-        if let minerInstance = dictionary[Keys.kMinerInstance] as? String {
+        if let minerInstance = dictionary[Keys.kMinerInstance.rawValue] as? String {
             self.GPUSAlive = GPUSAlive
             self.minerInstance = minerInstance
             self.totalHashrate = totalHashrate
             self.rigName = rigName
             self.ipaddress = ipaddress
             self.totalHashrate = fullHash(hashes: totalHashrate)
-        } else if let minerInstanceInt = dictionary[Keys.kMinerInstance] as? Int {
+        } else if let minerInstanceInt = dictionary[Keys.kMinerInstance.rawValue] as? Int {
             self.GPUSAlive = GPUSAlive
             self.minerInstance = String(minerInstanceInt)
             self.totalHashrate = totalHashrate
