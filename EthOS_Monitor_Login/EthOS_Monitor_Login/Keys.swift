@@ -8,10 +8,10 @@
 
 import Foundation
 
-enum Keys {
-
+enum Keys: String {
+    
     //MARK: - Per Rig
-
+    
     case kGPUS = "gpus"
     case kHash = "hash"
     case kBioses = "bioses"
@@ -45,7 +45,7 @@ enum Keys {
     case kVersion = "version"
     case kVramSize = "vramsize"
     case kWatts = "watts"
-
+    
     //MARK: -  Per Account
 
     case kAliveGPUS = "alive_gpus"
