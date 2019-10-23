@@ -47,7 +47,7 @@ enum Keys: String {
     case kWatts = "watts"
     
     //MARK: -  Per Account
-    
+
     case kAliveGPUS = "alive_gpus"
     case kAliveRigs = "alive_rigs"
     case kAvgTemp = "avg_temp"
@@ -56,5 +56,5 @@ enum Keys: String {
     case kTotalGPUS = "total_gpus"
     case kTotalHash = "total_hash"
     case kTotalRigs = "total_rigs"
-    
+
 }
